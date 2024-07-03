@@ -1,6 +1,6 @@
 # zAppBuild
 zAppBuild is a generic build solution for building z/OS applications using Apache Groovy build scripts and IBM Dependency Based Build (DBB) APIs.
-
+#aathil
 ## Resources
 * [IBM Dependency Based Build Product Page](https://www.ibm.com/products/dependency-based-build)
 * [IBM DBB Knowledge Center](https://www.ibm.com/docs/en/dbb/1.1.0)
@@ -13,7 +13,7 @@ zAppBuild is a generic build solution for building z/OS applications using Apach
 For instructions on how to contribute enhancements and bug fixes to zAppBuild, please read the [Contributions Guidelines](CONTRIBUTIONS.md).
 
 ## How zAppBuild works
-The zAppBuild repository is intended to be cloned to a single location on Unix Systems Services (USS) and used to build all of your z/OS applications. Global configuration properties are configured in the properties files in the [build-conf](build-conf/) directory. Specifying application-level properties is done by simply copying the supplied `application-conf` folder (located in the [samples folder](samples)) to the application source repository you want to build and then verify/update the contained default configuration property values to ensure they meet the build requirements of your application. See the included [MortgageApplication](samples/MortgageApplication) sample for an example of an application that has been modified to be built by zAppBuild.  
+The zAppBuild repository is intended to be cloned to a single location on Unix Systems Services (USS) and used to build all of your z/OS applications. Global configuration properties are configured in the properties files in the [build-conf](build-conf/) directory. Specifying application-level properties is done by simply copying the supplied `application-conf` folder (located in the [samples folder](samples)) to the application source repository you want to build and then verify/update the contained default configuration property values to ensure they meet the build requirements of your application. See the included [MortgageApplication](samples/MortgageApplication) sample for an example of an application that has been modified to be built by zAppBuild.
 
 **IMPORTANT** : The [datasets.properties](build-conf/datasets.properties) must be configured for your build machine before executing a build!  See [build-conf/README.md](build-conf/README.md) for more information.
 
@@ -34,7 +34,7 @@ The zAppBuild sample provides the following *language* build scripts by default:
 All language scripts both compile and optionally link-edit programs. The language build scripts are intended to be useful out of the box but depending on the complexity of your applications' build requirements, may require modifications to meet your development team's needs.  By following the examples used in the existing language build scripts of keeping all application specific references out of the build scripts and instead using configuration properties with strong default values, the zAppBuild sample can continue to be a generic build solution for all of your specific applications.
 
 ## Build Scope
-The build scope of zAppBuild is an application which is loosely defined as one or more Git repositories containing all the z/OS source files required to build the application.  There are no specific rules as to the structure of the repositories except that one repository must contain the high level `application-conf` folder provided by zAppBuild which contains all of the configuration properties for building the application programs.  
+The build scope of zAppBuild is an application which is loosely defined as one or more Git repositories containing all the z/OS source files required to build the application.  There are no specific rules as to the structure of the repositories except that one repository must contain the high level `application-conf` folder provided by zAppBuild which contains all of the configuration properties for building the application programs.
 
 **NOTE:** All source repositories that make up the application must be cloned on the build machine under a common *workspace*  directory prior to calling build.groovy.
 
@@ -45,10 +45,10 @@ zAppBuild supports a number of build scenarios:
 * **Impact Build** - Build only programs impacted by source files that have changed since the last successful build.
 * **Impact Build with baseline reference** - Build only programs impacted by source files that have changed by diff'ing to a previous configuration reference.
 * **Topic Branch Build** - Detects when building a topic branch for the first time and will automatically clone the dependency data collections from the main build branch in order to avoid having to rescan the entire application.
-* **Merge Build** - Build only changed programs which will be merged back into the mainBuildBranch by using a triple-dot git diff. 
+* **Merge Build** - Build only changed programs which will be merged back into the mainBuildBranch by using a triple-dot git diff.
 * **Scan Source** - Skip the actual building and only scan source files to store dependency data in collection (migration scenario).
 * **Scan Source + Outputs** - Skip the actual building and only scan source files and existing load modules to dependency data in source and output collection (migration scenario with static linkage scenarios).
-* **Build Preview** - Supplemental build option. Process all phases of the supplied build option, but will not execute the commands. A build report and a build result are generated with a specific status that excludes them in subsequent impact build calculations. 
+* **Build Preview** - Supplemental build option. Process all phases of the supplied build option, but will not execute the commands. A build report and a build result are generated with a specific status that excludes them in subsequent impact build calculations.
 
 
 Instructions on invoking a zAppBuild is included in [docs/BUILD.md](docs/BUILD.md) as well as invocation samples for the above mentioned build scenarios including sample console logs.
@@ -57,7 +57,7 @@ Application-level build properties such as compile and link options can be defin
 
 zAppBuild comes with a set of reporting features. It helps development teams to understand the impact of changed files across multiple applications. Another feature helps to identify conflicts due to concurrent development activities within their application. An overview of these features are documented in [docs/REPORTS.md](docs/REPORTS.md).
 
-Links to additional documentation is provided in the table below.  
+Links to additional documentation is provided in the table below.
 
 ## Repository Legend
 Folder/File | Description | Documentation Link
